@@ -3,16 +3,17 @@
 /**
  * Number Format Currency.
  *
- * @param float $fNumber
+ * @param float|null $fNumber
  * @param int $iDecimals
- * @param mixed $sCurrency
+ * @param string|null $sCurrency
  *
- * @return string
+ * @return string|null
+ * @throws \Exception
  */
-function number_format_currency(?float $fNumber, int $iDecimals = 2, ?string $sCurrency): string
+function number_format_currency(?float $fNumber, int $iDecimals = 2, ?string $sCurrency)
 {
-    if (!is_float($fNumber)) {
-        $fNumber = 0;
+    if (is_null($sValue)) {
+        return null;
     }
 
     $aCurrencies = [
