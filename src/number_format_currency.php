@@ -3,7 +3,7 @@
 /**
  * Number Format Currency.
  *
- * @param float|null $value
+ * @param float|null $num
  * @param int $decimals
  * @param string|null $currency
  * @param string|null $notation
@@ -11,61 +11,61 @@
  * @return string|null
  * @throws \Exception
  */
-function number_format_currency(?float $value, int $decimals = 2, ?string $currency = null, ?string $notation = null)
+function number_format_currency(?float $num, int $decimals = 0, ?string $currency = null, ?string $notation = null)
 {
-    if (is_null($value)) {
+    if (is_null($num)) {
         return null;
     }
 
     if (!is_null($notation)) {
         switch ($notation) {
             case 'English':
-                return number_format($value, $decimals, '.', ',');
+                return number_format($num, $decimals, '.', ',');
             case 'French':
-                return number_format($value, $decimals, ',', ' ');
+                return number_format($num, $decimals, ',', ' ');
         }
     }
 
     $currencies = [
-        'ARS' => ['dec_point' => ',', 'thousands_sep' => '.'],
-        'AUD' => ['dec_point' => '.', 'thousands_sep' => ','],
-        'BRL' => ['dec_point' => ',', 'thousands_sep' => '.'],
-        'CHF' => ['dec_point' => ',', 'thousands_sep' => '.'],
-        'CLP' => ['dec_point' => '.', 'thousands_sep' => ','],
-        'CNY' => ['dec_point' => '.', 'thousands_sep' => ','],
-        'COP' => ['dec_point' => '.', 'thousands_sep' => ','],
-        'CZK' => ['dec_point' => ',', 'thousands_sep' => '.'],
-        'DKK' => ['dec_point' => ',', 'thousands_sep' => '.'],
-        'EUR' => ['dec_point' => ',', 'thousands_sep' => '.'],
-        'GBP' => ['dec_point' => '.', 'thousands_sep' => ','],
-        'HKD' => ['dec_point' => '.', 'thousands_sep' => ','],
-        'HUF' => ['dec_point' => ',', 'thousands_sep' => '.'],
-        'ILS' => ['dec_point' => ',', 'thousands_sep' => '.'],
-        'INR' => ['dec_point' => '.', 'thousands_sep' => ','],
-        'JPY' => ['dec_point' => '.', 'thousands_sep' => ','],
-        'KRW' => ['dec_point' => '.', 'thousands_sep' => ','],
-        'MAD' => ['dec_point' => '.', 'thousands_sep' => ','],
-        'MXN' => ['dec_point' => '.', 'thousands_sep' => ','],
-        'MYR' => ['dec_point' => '.', 'thousands_sep' => ','],
-        'NOK' => ['dec_point' => '.', 'thousands_sep' => ','],
-        'NZD' => ['dec_point' => '.', 'thousands_sep' => ','],
-        'PHP' => ['dec_point' => '.', 'thousands_sep' => ','],
-        'PLN' => ['dec_point' => ',', 'thousands_sep' => '.'],
-        'RUB' => ['dec_point' => ',', 'thousands_sep' => '.'],
-        'SAR' => ['dec_point' => '.', 'thousands_sep' => ','],
-        'SEK' => ['dec_point' => ',', 'thousands_sep' => '.'],
-        'SGD' => ['dec_point' => '.', 'thousands_sep' => ','],
-        'THB' => ['dec_point' => '.', 'thousands_sep' => ','],
-        'TRY' => ['dec_point' => '.', 'thousands_sep' => ','],
-        'TWD' => ['dec_point' => '.', 'thousands_sep' => ','],
-        'USD' => ['dec_point' => '.', 'thousands_sep' => ','],
-        'VND' => ['dec_point' => ',', 'thousands_sep' => '.'],
-        'ZAR' => ['dec_point' => '.', 'thousands_sep' => ','],
+        'ARS' => ['decimal_separator' => ',', 'thousands_separator' => '.'],
+        'AUD' => ['decimal_separator' => '.', 'thousands_separator' => ','],
+        'BRL' => ['decimal_separator' => ',', 'thousands_separator' => '.'],
+        'CHF' => ['decimal_separator' => ',', 'thousands_separator' => '.'],
+        'CLP' => ['decimal_separator' => '.', 'thousands_separator' => ','],
+        'CNY' => ['decimal_separator' => '.', 'thousands_separator' => ','],
+        'COP' => ['decimal_separator' => '.', 'thousands_separator' => ','],
+        'CZK' => ['decimal_separator' => ',', 'thousands_separator' => '.'],
+        'DKK' => ['decimal_separator' => ',', 'thousands_separator' => '.'],
+        'EUR' => ['decimal_separator' => ',', 'thousands_separator' => '.'],
+        'GBP' => ['decimal_separator' => '.', 'thousands_separator' => ','],
+        'HKD' => ['decimal_separator' => '.', 'thousands_separator' => ','],
+        'HUF' => ['decimal_separator' => ',', 'thousands_separator' => '.'],
+        'ILS' => ['decimal_separator' => ',', 'thousands_separator' => '.'],
+        'INR' => ['decimal_separator' => '.', 'thousands_separator' => ','],
+        'JPY' => ['decimal_separator' => '.', 'thousands_separator' => ','],
+        'KRW' => ['decimal_separator' => '.', 'thousands_separator' => ','],
+        'MAD' => ['decimal_separator' => '.', 'thousands_separator' => ','],
+        'MXN' => ['decimal_separator' => '.', 'thousands_separator' => ','],
+        'MYR' => ['decimal_separator' => '.', 'thousands_separator' => ','],
+        'NOK' => ['decimal_separator' => '.', 'thousands_separator' => ','],
+        'NZD' => ['decimal_separator' => '.', 'thousands_separator' => ','],
+        'PHP' => ['decimal_separator' => '.', 'thousands_separator' => ','],
+        'PLN' => ['decimal_separator' => ',', 'thousands_separator' => '.'],
+        'RUB' => ['decimal_separator' => ',', 'thousands_separator' => '.'],
+        'SAR' => ['decimal_separator' => '.', 'thousands_separator' => ','],
+        'SEK' => ['decimal_separator' => ',', 'thousands_separator' => '.'],
+        'SGD' => ['decimal_separator' => '.', 'thousands_separator' => ','],
+        'THB' => ['decimal_separator' => '.', 'thousands_separator' => ','],
+        'TRY' => ['decimal_separator' => '.', 'thousands_separator' => ','],
+        'TWD' => ['decimal_separator' => '.', 'thousands_separator' => ','],
+        'USD' => ['decimal_separator' => '.', 'thousands_separator' => ','],
+        'VND' => ['decimal_separator' => ',', 'thousands_separator' => '.'],
+        'ZAR' => ['decimal_separator' => '.', 'thousands_separator' => ','],
     ];
 
     if (!array_key_exists($currency, $currencies)) {
-        throw new \Exception('Currency Not Implemented');
+        throw new \Exception('Not Implemented');
     }
 
-    return number_format($value, $decimals, $currencies[$currency]['dec_point'], $currencies[$currency]['thousands_sep']);
+    return number_format($num, $decimals, $currencies[$currency]['decimal_separator'], $currencies[$currency]['thousands_separator']);
 }
