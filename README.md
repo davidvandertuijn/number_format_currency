@@ -4,6 +4,19 @@
 <a href="https://packagist.org/packages/davidvandertuijn/number_format_currency"><img src="https://poser.pugx.org/davidvandertuijn/number_format_currency/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/davidvandertuijn/number_format_currency"><img src="https://poser.pugx.org/davidvandertuijn/number_format_currency/license.svg" alt="License"></a>
 
+## Install
+
+```
+composer require davidvandertuijn/number_format_currency
+```
+
+## Usage
+
+```php
+number_format_currency('1234.56', 2, 'EUR'); // 1.234,56
+number_format_currency('1234.56', 2, 'USD'); // 1,234.56
+```
+
 Support for the currencies below:
 
 | Country            | Currency           | Abbreviation/Code |
@@ -43,27 +56,9 @@ Support for the currencies below:
 | United States      | US Dollar          | USD               |
 | Vietnam            | Dong               | VND               |
 
-## Install
-
-```
-composer require davidvandertuijn/number_format_currency
-```
-
-## Usage
-
-```php
-number_format_currency('1234.56', 2, 'EUR'); // 1.234,56
-number_format_currency('1234.56', 2, 'USD'); // 1,234.56
-```
-
 ### English or French Notation
 
-Canada (English)
 ```php
-echo number_format_currency('1234.56', 2, 'CAD', 'English'); // 1,234.56
-```
-
-Canada (French)
-```php
-echo number_format_currency('1234.56', 2, 'CAD', 'French'); // 1 234,56
+number_format_currency('1234.56', 2, 'CAD', 'English'); // 1,234.56
+number_format_currency('1234.56', 2, 'CAD', 'French'); // 1 234,56
 ```
