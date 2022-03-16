@@ -4,6 +4,8 @@
 <a href="https://packagist.org/packages/davidvandertuijn/number_format_currency"><img src="https://poser.pugx.org/davidvandertuijn/number_format_currency/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/davidvandertuijn/number_format_currency"><img src="https://poser.pugx.org/davidvandertuijn/number_format_currency/license.svg" alt="License"></a>
 
+![Number Format Currency](https://cdn.davidvandertuijn.nl/github/number_format_currency.png)
+
 ## Install
 
 ```
