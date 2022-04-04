@@ -26,6 +26,10 @@ function number_format_currency(?float $num, int $decimals = 0, ?string $currenc
         }
     }
 
+    if (is_null($currency)) {
+        return null;
+    }
+
     $currencies = [
         'ARS' => ['decimal_separator' => ',', 'thousands_separator' => '.'],
         'AUD' => ['decimal_separator' => '.', 'thousands_separator' => ','],
