@@ -6,6 +6,10 @@
 
 ![Number Format Currency](https://cdn.davidvandertuijn.nl/github/number_format_currency.png)
 
+The “Number Format Currency” tool is designed to assist users in formatting numerical values as currency, enhancing the clarity and professionalism of financial data presentations. This functionality is essential for businesses, accountants, and analysts who need to display monetary amounts accurately and consistently.
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/davidvandertuijn)
+
 ## Install
 
 ```
